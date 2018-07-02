@@ -103,7 +103,7 @@ def signal_decay_metric(acquisition_scheme, data):
     Returns
     -------
     SDM : array of size data,
-            Estimated Signal Decay Metric (SDK)
+        Estimated Signal Decay Metric (SDK)
     """
     mean_b0 = np.mean(data[..., acquisition_scheme.b0_mask], axis=-1)
     data_shape = data.shape[:-1]

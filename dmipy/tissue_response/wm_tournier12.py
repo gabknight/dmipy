@@ -46,9 +46,9 @@ def white_matter_response_tournier13(acquisition_scheme, data, rh_order=10):
     References
     ----------
     .. [1] Tournier, J‐Donald, Fernando Calamante, and Alan Connelly.
-        "Determination of the appropriate b value and number of gradient
-        directions for high‐angular‐resolution diffusion‐weighted imaging."
-        NMR in Biomedicine 26.12 (2013): 1775-1786.
+    	"Determination of the appropriate b value and number of gradient
+    	directions for high‐angular‐resolution diffusion‐weighted imaging."
+    	NMR in Biomedicine 26.12 (2013): 1775-1786.
     """
     gtab = gtab_mipy2dipy(acquisition_scheme)
     tenmod = dti.TensorModel(gtab)
@@ -76,3 +76,4 @@ def white_matter_response_tournier13(acquisition_scheme, data, rh_order=10):
     response_model = RF1AnisotropicTissueResponse(kernel_rh_coeff)
     sh_model = MultiCompartmentSphericalHarmonicsModel([response_model])
     sh_fit = sh_model.fit(acquisition_scheme, largest_fa_data)
+
